@@ -1,10 +1,16 @@
 # DBMS-PROJECT
-Here is the code of my final project of data base management system.
+# Here is the code of my final project of data base management system.
 
--- FIRST WE NEED TO CREATE TABELS, here i created 3 tables named PRODUCT, DEPOT, STOCK.
+--FIRST WE NEED TO CREATE TABELS, HERE I CREATED 3 TABLES NAMES AS PRODUCT, DEPOT, STOCK.
 
-create table Product(prod varchar(50) not null primary key, pname varchar(50), price varchar(50));
+
+create table Product(
+prod varchar(50) not null primary key,
+pname varchar(50),
+price varchar(50));
+
 create table Depot(dep varchar(50) not null primary key, addr varchar(50), volume varchar(50));
+
 create table Stock( prod varchar(50), dep varchar(50), quantity varchar(50), foreign key(dep) references Depot(dep) on delete cascade on update cascade, foreign key(prod) references Product(prod) on delete cascade on update cascade);
 
 
